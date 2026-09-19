@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+  body {
+    margin: 0;
+    background: #FAF4E4;
+    color: #0C2B21;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: #0C2B21; text-decoration: none; }
+  a:hover { color: #4A6B57; }
+  img { display: block; }
+  ::selection { background: #0C2B21; color: #FAF4E4; }
+  nav::-webkit-scrollbar { display: none; }
+}
+
+@layer components {
+  .section-pad { padding: clamp(64px, 9vw, 140px) clamp(20px, 5vw, 72px); }
+  .eyebrow { font-size: 9.5px; letter-spacing: 0.3em; }
+  .display-h2 {
+    font-family: var(--font-display), serif;
+    font-weight: 300;
+    font-size: clamp(30px, 4.4vw, 62px);
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .lead {
+    margin: 0;
+    max-width: 52ch;
+    font-weight: 300;
+    font-size: clamp(14px, 1.1vw, 17px);
+    line-height: 1.75;
+  }
+  .section-head {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: clamp(24px, 4vw, 64px);
+    align-items: end;
+  }
+  .pill {
+    border-radius: 999px;
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: all .25s ease;
+  }
+  .field {
+    width: 100%;
+    padding: 19px 18px;
+    border: 1px solid rgba(12, 43, 33, 0.22);
+    border-radius: 3px;
+    background: none;
+    font-size: 15px;
+    font-weight: 300;
+    color: #0C2B21;
+    outline: none;
+    transition: border-color .2s ease;
+  }
+  .field:focus { border-color: #0C2B21; }
+  .field-label { font-size: 9.5px; letter-spacing: 0.26em; color: #6B7C71; }
+}
